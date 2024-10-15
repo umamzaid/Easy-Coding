@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style2.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-
     <title>python-example</title>
     <style>
         * {
@@ -20,30 +19,27 @@
         .body {
             justify-content: content;
             align-items: center;
-
         }
-
 
         .headpart {
-            background-color: #819ef3;
-            height: 80px;
-            width: 80%;
-            position: fixed;
-            margin-left: 10%;
-            box-shadow: 0 5px 6px #c4c4c4;
-        }
-
-
+    background-color: #819ef3;
+    height: 80px;
+    width: 80%;
+    position: fixed;
+    margin-left: 10%;
+    box-shadow: 0 5px 6px #c4c4c4;
+    display: flex;
+    align-items: center; /* Vertically center items */
+    justify-content: space-between; /* Space between logo and menu */
+    padding: 0 20px;
+}
 
         .logo {
             height: 190px;
             padding: 0 15px;
             line-height: 80px;
             margin-top: -45px;
-
-
         }
-
 
         .headpart:after {
             content: '';
@@ -66,8 +62,8 @@
             margin: 30px 7px;
             border-top-left-radius: 7px;
             border-top-right-radius: 7px;
-
-
+            position: relative; /* Added position relative */
+            z-index: 1; /* Ensure stacking order */
         }
 
         .headpart ul li a {
@@ -77,8 +73,6 @@
             font-size: 16px;
             padding: 8px 15px;
             font-size: 14px;
-
-
         }
 
         .headpart ul li a:hover {
@@ -93,14 +87,12 @@
             color: red;
             box-shadow: none;
             border: none;
-
-
         }
 
         .headpart ul li:hover>ul {
             opacity: 1;
             visibility: visible;
-
+            z-index: 1000; /* Ensures the submenu is visible on top */
         }
 
         .headpart ul ul {
@@ -108,10 +100,12 @@
             opacity: 0;
             visibility: hidden;
             transition: top 0.3s;
+            top: 100%;
+            left: 0;
+            z-index: 10; /* Set higher z-index for dropdown visibility */
         }
 
         .headpart ul ul li {
-
             position: relative;
             margin: 0px;
             width: 110px;
@@ -119,30 +113,20 @@
             display: list-item;
             text-align: center;
             background-color: rgb(224, 92, 92);
-
-
-
-
         }
 
         .headpart ul ul ul li {
             position: relative;
             top: -60px;
             left: 111px;
-
-
+            z-index: 1001; /* Further ensure visibility */
         }
 
         #ID {
-
             border-radius: 1px;
             background-color: rgb(204, 201, 201);
             border-bottom: 0.5px solid white;
         }
-
-
-
-
 
         .follow {
             margin-top: 2.50%;
@@ -159,8 +143,6 @@
             padding: 20px 0 40px;
             color: black;
             text-align: center;
-
-
         }
 
         .social-media {
@@ -178,7 +160,6 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
-
         }
 
         a i {
@@ -209,16 +190,6 @@
             transform: scale(1.5);
         }
 
-
-
-
-
-
-
-
-
-
-
         .question {
             width: 80%;
             margin-left: 10%;
@@ -244,12 +215,10 @@
         <div class="headpart">
             <img src="images/loho3.png" class="logo">
 
-
             <ul>
                 <li id="left"><a href="index.html">Home</a></li>
 
                 <li>
-
                     <a href="#">Tutorials</a>
                     <ul>
                         <li id="ID"><a href="workinprogress.html">Java</a></li>
@@ -260,18 +229,15 @@
                 <li><a href="#">Examples</a>
                     <ul>
                         <li id="ID"><a href="python-example.html">Python</a></li>
-
                         <li id="ID"><a href="workinprogress.html">Java</a></li>
                         <li id="ID"><a href="workinprogress.html">C++</a></li>
                         <li id="ID"><a href="workinprogress.html">JavaScript</a></li>
                     </ul>
                 </li>
                 <li>
-
                     <a href="#">Quiz</a>
                     <ul>
                         <li id="ID"><a href="#">Python</a>
-
                             <ul>
                                 <li id="ID"><a href="rules.html">Beginner</a></li>
                                 <li id="ID"><a href="workinprogress.html">Intermediate</a></li>
@@ -280,7 +246,6 @@
                         </li>
 
                         <li id="ID"><a href="#">Java</a>
-
                             <ul>
                                 <li id="ID"><a href="workinprogress.html">Beginner</a></li>
                                 <li id="ID"><a href="workinprogress.html">Intermediate</a></li>
@@ -303,36 +268,17 @@
                         </li>
                     </ul>
                 </li>
-
             </ul>
-
         </div>
 
     </nav>
+
     <div class="question">
-
         <div class="frame">
-            <iframe src="python.html" width="211px" height="700px">
-            </iframe>
+            <iframe src="python.html" width="211px" height="700px"></iframe>
             <iframe src="choice.html" width="991px" height="700px" name="image"></iframe>
-
         </div>
-
-        <!--
-        <div class="part-1">
-            <pre>
-        
-                <code class="language-python">
-                    print("Twinkle, twinkle, little star, \n\tHow I wonder what you are! \n\t\tUp above the world so high, \n\t\tLike a diamond in the sky. \nTwinkle, twinkle, little star, \n\tHow I wonder what you are!")
-                    print("HELLO RAZA");
-                </code>
-            </pre>
-
-        </div>
-          -->
-
     </div>
-
 
     <div class="follow">
         <h5>FOLLOW US ON SOCIAL</h5>
@@ -349,7 +295,6 @@
     </div>
 
     <script src="prism1.js"></script>
-
 </body>
 
 </html>
